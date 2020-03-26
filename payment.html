@@ -1,13 +1,15 @@
 <html>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-    <center> <img src="Shippensburg Area Hospital Record Management System.png" width=800 height=200></center>
+    <center><h1>Shippensburg Area Hospital Record Management System</h1></center>
     <br>
 
 <!--css for nav bar-->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+    
+
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -31,14 +33,6 @@
       background-color: #ddd;
       color: black;
     }
-    
-    .topnav a.active {
-      background-color: rgb(57, 99, 161);
-      color: white;
-    }
-
-
-
 
 
     </style>
@@ -49,8 +43,9 @@
 <body>
     <center>
             <!--Navigation Bar-->
+
             <div class="topnav">
-                <a class="active" href="homepage.html">Home</a>
+                <a href="homepage.html">Home</a>
                 <a href="patients.html">Patients</a>
                 <a href="prescriptions.html">Prescriptions</a>
                 <a href="payment.html">Payment</a>
@@ -58,9 +53,60 @@
 
               </div>
             
-      
-        
+             
+        <div class="form" >
+            
         <h3>Payments</h3>
+
+        <form name="paymentform" method="Post" content="width=device-width">
+            <center><table border = 0 >
+                <tr>
+                    <td> Patient ID: </td>
+                    <td><input type="Text" name="txtid" size=15 maxlength=5></td>
+                </tr>
+
+                <tr>  
+                    <td> Patient Name: </td>
+                    <td><input type="Text" name="txtfullname" size=35 maxlength=35></td>
+                </tr>      
+                
+                <tr>
+                    <td> Phone Number: </td>
+                    <td><input type="Text" name="txtphone" size=25 maxlength=25></td>
+                </tr>
+                
+                <tr>
+                    <td> Email: </td>
+                    <td><input type="Text" name="txtemail" size=20 maxlength=20></td>
+                </tr>
+
+                <tr>
+                    <td colspan=2>Payment Method: </td>
+                </tr>
+
+                <tr>
+                    <td colspan=2><input type="Radio" name="rpay" value="credit"> Credit &nbsp; &nbsp;
+                        <input type="Radio" name="rpay" value="check"> Check &nbsp; &nbsp;
+                        <input type="Radio" name="rpay" value="cash"> Cash &nbsp; &nbsp;                    
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Credit Card Number:</td>
+                    <td><input type="Text" name="txtcredit" size=20 maxlength=20></td> 
+                </tr>
+                
+                <tr>
+                    <td> Check Number: </td>
+                    <td><input type="Text" name="txtcheck" size=30 maxlength=20></td>
+                </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+
 
     </center>
 
