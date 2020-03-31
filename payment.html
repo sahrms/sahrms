@@ -7,9 +7,7 @@
 <!--css for nav bar-->
 
     <style>
-    
-
-
+  
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -34,13 +32,60 @@
       color: black;
     }
 
-
     </style>
 
+</head>
 
- </head>
 
 <body>
+
+    <script language="Javascript">
+
+        function checkfield()
+        {
+            var errorflag=false;
+            var errormsg="";
+            var confirmmsg="";
+
+
+            if (document.paymentform.txtid.value=="")
+            {
+                errorflag=true;
+                errormsg="Enter a patient ID. <br>";
+            }
+            if (document.paymentform.txtfullname=="")
+            {
+                errorflag=true;
+                errormsg="Enter patient name. <br>";
+            }
+            if (document.paymentform.txtphone=="")
+            {
+                errorflag=true;
+                errormsg="Enter patient phone number. <br>"
+            }
+            if ((document.paymentform.rpay[0].checked == false) && (document.paymentform.rpay[1].checked==false))
+            {
+                errorflag = true;
+                errormsg = errormsg + "Please choose a payment method. <br>"
+            }
+
+
+            //error msg
+        	if (errorflag==true)
+	        {
+	            document.write(errormsg);
+	        } 
+	        else
+	        {
+	            document.write(confirmmsg);
+	        } 
+        }
+
+    
+    </script>
+
+
+
     <center>
             <!--Navigation Bar-->
 
@@ -98,14 +143,26 @@
                 
                 <tr>
                     <td> Check Number: </td>
-                    <td><input type="Text" name="txtcheck" size=30 maxlength=20></td>
+                    <td><input type="Text" name="txtcheck" size=15 maxlength=15></td>
                 </tr>
 
             </table>
 
+            <input type="button" value="Send Payment" onclick="checkfield()">
+            <input type="reset">
+
+
         </form>
 
+
+
+
+
     </div>
+
+
+
+
 
 
     </center>
