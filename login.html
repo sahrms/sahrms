@@ -16,29 +16,45 @@
     </center>
 
     <center>
-        <table method="Post">
-
-            <tr>
-                <td>Username: </td>
-                <td><input type="Text" name="txtuser" size="20" maxlength="20"></td>
-            </tr>
+        <form id="form_id" method="post" name="myform">
+            <label>Username :</label>
+            <input type="text" name="username" id="username"/>
             <br>
             <br>
-            <tr>
-                <td>Password: </td>
-                <td><input type="Text" name="txtpass" size="20" maxlength="20"> </td>
-            </tr>
-
-        </table>
-
-        <br>
-
-        <input type="Button" name="login" size="15" value="Login"> &nbsp; &nbsp;
-        <input type="Button" name="cancel" size="15" value="Cancel">
-
+            <label>Password :</label>
+            <input type="password" name="password" id="password"/>
+            <br>
+            <br>
+            <input type="button" value="Login" id="submit" onclick="validate()"/>
+            </form>
     </center>
 
+    <script>
+        var attempt = 3; 
+        
+    function validate()
+    {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if ( username == "admin" && password == "admin")
+        {
+            alert ("Login successfully");
+            window.location = "homepage.html";
+            return false;
+        }
+        else{
+            attempt --;
+            alert("You have left "+attempt+" attempt;");
 
+            if( attempt == 0){
+            document.getElementById("username").disabled = true;
+            document.getElementById("password").disabled = true;
+            document.getElementById("submit").disabled = true;
+            return false;
+            }
+        }
+    }
+    </script>
 
 
 
