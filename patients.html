@@ -58,15 +58,108 @@
 
               <br>
 
-        <input type="text" name="txtsearch" size=20 maxlength=20> &nbsp;
-        <input type="button" name="btnsearch" value="Search" size=20>
+        <input type="text" id="search" onkeyup="searchPatients()" placeholder="Search for patients..." size=50 maxlength=50> &nbsp;
+        
 
+        <br>
+        <br>
+        
+        <center><table id="patienttable" border=1>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Address</td>
+                <td>City</td>
+                <td>State</td>
+                <td>Zip</td>
+                <td>Phone Number</td> 
+                <td>Email</td>
+                <td>Birthday</td>
+                <td>Sex</td>
+                <td>Insurance</td>
+                <td>Prescriptions</td>
+                <td>Notes</td>
+            </tr>
+
+            <tr>
+                <td>Katrina</td>
+                <td>Roshak</td>
+                <td>59 Cheryl Trl</td>
+                <td>Fairfield</td>
+                <td>PA</td>
+                <td>17320</td>
+                <td>222-222-2222</td>
+                <td>kr7729@ship.edu</td>
+                <td>01/04/1998</Td>
+                <td>F</td>
+                <td>Tricare</td>
+                <td>N/A</td>
+                <td>Seasonal allergies <br>
+                Allergic to cats</td>
+            </tr>
+
+            <tr>
+                <td>Bob</td>
+                <td>Smith</td>
+                <td>33 Space Rd</td>
+                <td>Shippensburg</td>
+                <td>PA</td>
+                <td>17257</td>
+                <td>555-968-8888</td>
+                <td>bsmith434@yahoo.com</td>
+                <td>05/05/1990</td>
+                <td>M</td>
+                <td>Humana</td>
+                <td>N/A</td>
+                <td>Arthritis <br>
+                Family history of diabetes</td>
+            </tr>
+
+            <tr>
+                <td>June</td>
+                <td>Weaver</td>
+                <td>45 Flower Dr</td>
+                <td>Shippensburg</td>
+                <td>PA</td>
+                <td>17257</td>
+                <td>717-333-2434</td>
+                <td>june.weaver@gmail.com</td>
+                <td>08/18/1982</td>
+                <td>F</td>
+                <td>Humana</td>
+                <td>500 mg Metformin twice a day</td>
+                <td>Type 2 Diabetes</td>
+            </tr>
+
+        </table>
 
               
     </center>
 
 
-
+    <script>
+        function searchPatients() {
+          // Declare variables
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("search");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("patienttable");
+          tr = table.getElementsByTagName("tr");
+        
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }
+        </script>
 
 
 
