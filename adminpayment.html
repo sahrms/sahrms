@@ -1,0 +1,177 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <center><h1>Shippensburg Area Hospital Record Management System</h1></center>
+    <br>
+
+<!--css for nav bar-->
+
+    <style>
+  
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    .topnav a {
+      float: inline-end;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 20px 20px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <script language="Javascript">
+
+        function checkfield()
+        {
+            var errorflag=false;
+            var errormsg="";
+            var confirmmsg="";
+
+
+            if (document.paymentform.txtid.value=="")
+            {
+                errorflag=true;
+                errormsg="Enter a patient ID. <br>";
+            }
+            if (document.paymentform.txtfullname=="")
+            {
+                errorflag=true;
+                errormsg="Enter patient name. <br>";
+            }
+            if (document.paymentform.txtphone=="")
+            {
+                errorflag=true;
+                errormsg="Enter patient phone number. <br>"
+            }
+            if ((document.paymentform.rpay[0].checked == false) && (document.paymentform.rpay[1].checked==false))
+            {
+                errorflag = true;
+                errormsg = errormsg + "Please choose a payment method. <br>"
+            }
+
+
+            //error msg
+        	if (errorflag==true)
+	        {
+	            document.write(errormsg);
+	        } 
+	        else
+	        {
+	            document.write(confirmmsg);
+	        } 
+        }
+
+    
+    </script>
+
+
+
+    <center>
+            <!--Navigation Bar-->
+
+            <div class="topnav">
+                <a href="adminhomepage.html">Home</a>
+                <a href="adminpatients.html">Patients</a>
+                <a href="adminprescriptions.html">Prescriptions</a>
+                <a href="adminpayment.html">Payment</a>
+                <a href="adminmanuals.html">Manuals</a>
+
+              </div>
+            
+             
+        <div class="form" >
+            
+        <h3>Payments</h3>
+
+        <form name="paymentform" method="Post" content="width=device-width">
+            <center><table border = 0 >
+                <tr>
+                    <td> Patient ID: </td>
+                    <td><input type="Text" name="txtid" size=15 maxlength=5></td>
+                </tr>
+
+                <tr>  
+                    <td> Patient Name: </td>
+                    <td><input type="Text" name="txtfullname" size=35 maxlength=35></td>
+                </tr>      
+                
+                <tr>
+                    <td> Phone Number: </td>
+                    <td><input type="Text" name="txtphone" size=25 maxlength=25></td>
+                </tr>
+                
+                <tr>
+                    <td> Email: </td>
+                    <td><input type="Text" name="txtemail" size=20 maxlength=20></td>
+                </tr>
+
+                <tr>
+                    <td colspan=2>Payment Method: </td>
+                </tr>
+
+                <tr>
+                    <td colspan=2><input type="Radio" name="rpay" value="credit"> Credit &nbsp; &nbsp;
+                        <input type="Radio" name="rpay" value="check"> Check &nbsp; &nbsp;
+                        <input type="Radio" name="rpay" value="cash"> Cash &nbsp; &nbsp;                    
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Credit Card Number:</td>
+                    <td><input type="Text" name="txtcredit" size=20 maxlength=20></td> 
+                </tr>
+                
+                <tr>
+                    <td> Check Number: </td>
+                    <td><input type="Text" name="txtcheck" size=15 maxlength=15></td>
+                </tr>
+
+            </table>
+
+            <input type="button" value="Send Payment" onclick="checkfield()">
+            <input type="reset">
+
+
+        </form>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    </center>
+
+
+
+
+
+
+
+
+</body>
