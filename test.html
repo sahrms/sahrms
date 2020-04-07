@@ -2,7 +2,7 @@
    <body>
     <head>
         <script type="text/vbscript">
-        <!--    
+           
         
         Sub Submit_onclick()
         Dim Connection
@@ -15,17 +15,17 @@
         Connection.Open ConnString
         
         dim form1
-        Set form1 = document.Register
+        Set form1 = document.test
         
         Name1 = form1.UserID.value
         Age1 = form1.PWord.Value
         Add1 = form1.FName.value
         
-        connection.execute("INSERT INTO [test] VALUES ('"&Name1 &"'," &Age1 &",'"&Add1 &"')")
+        connection.execute("Select * from dbo.USERS")
         
         End Sub
         
-        //-->
+        
         </script>
         </head>
         <body>
