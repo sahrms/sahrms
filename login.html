@@ -38,22 +38,31 @@
         var password = document.getElementById("password").value;
         if ( username == "admin" && password == "admin")
         {
-            alert ("Login successfully");
+            alert ("Admin login successful");
+            window.location = "adminhomepage.html";
+            return false;
+        }
+
+        if ( username == "user" && password == "user")
+        {
+            alert ("User login successful");
             window.location = "homepage.html";
             return false;
         }
+
         else{
             attempt --;
-            alert("You have left "+attempt+" attempt;");
+            alert("You have left "+attempt+" attepmt;");
 
-            if( attempt == 0){
-            document.getElementById("username").disabled = true;
-            document.getElementById("password").disabled = true;
-            document.getElementById("submit").disabled = true;
-            return false;
+            if (attempt == 0){
+                document.getElementById("username").disabled = true;
+                document.getElementById("password").disabled = true;
+                document.getElementById("submit").disabled = true;
+                return false;
             }
         }
-    }
+        }
+    
     </script>
 
 
