@@ -1,0 +1,16 @@
+{
+    "liveServer.settings.CustomBrowser": "chrome",
+    "appService.showSavePrompt": false,
+    "files.autoSave": "off",
+    "mssql.connections": [
+        {
+            "server": "sahrms.database.windows.net",
+            "database": "",
+            "authenticationType": "SqlLogin",
+            "user": "sahrmsadmin",
+            "password": "Admin442",
+            "emptyPasswordInput": false,
+            "savePassword": false
+        }
+    ]
+}
