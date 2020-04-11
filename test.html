@@ -1,45 +1,17 @@
+@{
+var db = Database.Open("Patients");
+var selectedData = db.Query("SELECT * FROM Patients");
+var grid = new WebGrid(source: selectedData);
+}
+
+
 <html>
    <body>
-    <head>
-        <script type="text/vbscript">
-           
-        
-        Sub Submit_onclick()
-        Dim Connection
-        Dim ConnString
-        Dim Recordset
-        
-        Set connection=CreateObject("ADODB.Connection")
-        Set Recordset=CreateObject("ADODB.Recordset")
-        ConnString="DRIVER={SQL Server};SERVER=sahrms.database.windows.net;UID=sahrmsadmin;PWD=Admin442;DATABASE=dbo.PATIENTS"
-        Connection.Open ConnString
-        
-        dim form1
-        Set form1 = document.test
-        
-        PatientID = form1.PatientID.value
-        FName = form1.FName.Value
-        LName = form1.LName.value
-        
-        connection.execute("Select * from dbo.USERS")
-        
-        End Sub
-        
-        
-        </script>
-        </head>
-        <body>
-        
-        <h2>Please Fill details</h2><br>
-        <p>
-        <form name="test">
-        <pre>
-        <font face="Times New Roman" size="3">Please enter:<br>
-        User ID:   <input type="text" name="PatientID">
-        PWord:        <input type="text" name="FName">
-        FName:        <input type="text" name="LName">
-        <input type="button" id ="Submit" value="submit" /><font></form> 
-        </p>
-        </pre>
+    <head> Patients </head>
+    <div>
+        @grid.GetHtml()
+    </div>
+    
+
     </body>
 </html>
