@@ -1,36 +1,101 @@
+<html>
+
+<head>
+    <center><h1>Shippensburg Area Hospital Record Management System</h1></center>
+    <br>
+
+<!--css for nav bar-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    .topnav a {
+      float: inline-end;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 20px 20px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+ 
+
+
+
+    </style>
+
+
+ </head>
+
+<body>
+    <center>
+            <!--Navigation Bar-->
+            <div class="topnav">
+                <a href="homepage.html">Home</a>
+                <a href="patients.html">Patients</a>
+                <a href="prescriptions.html">Prescriptions</a>
+                <a href="payment.html">Payment</a>
+                <a href="manuals.html">Manuals</a>
+
+              </div>
+            
+              <br>
+              <br>
+              <h4><center>SAHRMS Patients</center></h4>
+
+
 <%@ Page Language="C#" Debug="true" %>
 <%@ Import Namespace="System.Data.Odbc"%>
 <%
 
-	Response.Write("<html><head><title>EMPLOYEE ASP in C# </title></head><body>");
+	Response.Write("<html><head><title>Patients</title></head><body>");
 
 	OdbcConnection myconn;
 	OdbcCommand mycmd;
 	OdbcDataReader myreader;
 	
-	myconn = new OdbcConnection(@"Driver={ODBC Driver 13 for SQL Server};Server=tcp:sahrms.database.windows.net,1433;Database=Patients;Uid=sahrmsadmin;Pwd=Admin442;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
-	mycmd = new OdbcCommand("Select*from Patients",myconn);
-	
-	Response.Write("<b>Data from the Names table in the EMPLOYEES ACCESS Database: C# Program</b>");
+    myconn = new OdbcConnection(@"Driver={ODBC Driver 13 for SQL Server};
+    Server=tcp:sahrms.database.windows.net,1433;Database=Patients;Uid=sahrmsadmin;Pwd=Admin442;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30");
+    mycmd = new OdbcCommand("Select * from PATIENTS",myconn);
+    
 	
 	myconn.Open();
-	myreader = mycmd.ExecuteReader();
+    myreader = mycmd.ExecuteReader();
+    
 	
-	Response.Write("<table border=1><td>ID</td>");
-	Response.Write("<td> First Name </td>");
-	Response.Write("<td> Last Name </td>");
-	
+	Response.Write("<center><table border=1 id=patienttable><td width=75px align=center>Patient ID</td>");
+	Response.Write("<td width=150px align=center>First Name</td>");
+    Response.Write("<td width=150px align=center>Last Name</td>");
+    Response.Write("<td width=150px align=center>Date of Birth</td>");
+    Response.Write("<td width=500px align=center>Home Address</td>");
+    Response.Write("<td width=150px align=center>Phone Number</td>");
+    Response.Write("<td width=150px align=center>Emergency Contact Number</td>");
+    Response.Write("<td width=150px align=center>Primary Doctor</td>");
+    
 	while ((myreader.Read()))
 	{
 	  Response.Write("<tr>");
-	  Response.Write("<td>"+ myreader["ID"]+"</td>");
-	  Response.Write("<td>"+myreader["First Name"] + "</td>");
-	  Response.Write("<td>"+myreader["Last Name"]+"</td>");
-      Response.Write("<td>"+myreader["DOB"]+"</td>");
-      Response.Write("<td>"+myreader["Home_Address"]+"</td>");
-      Response.Write("<td>"+myreader["PhoneNumber"]+"</td>");
-      Response.Write("<td>"+myreader["Emergency Contact"]+"</td>");
-      Response.Write("<td>"+myreader["Doctor"]+"</td>");
+	  Response.Write("<td align=center>"+ myreader["PatientID"]+"</td>");
+	  Response.Write("<td align=center>"+myreader["FName"] + "</td>");
+	  Response.Write("<td align=center>"+myreader["LName"]+"</td>");
+      Response.Write("<td align=center>"+myreader["DOB"]+"</td>");
+      Response.Write("<td align=center>"+myreader["Home_Address"]+"</td>");
+      Response.Write("<td align=center>"+myreader["Phone_Num"]+"</td>");
+      Response.Write("<td align=center>"+myreader["E_Contact_Num"]+"</td>");
+      Response.Write("<td align=center>"+myreader["UserID"]+"</td>");
       
 
 	  Response.Write("<br>");
@@ -44,4 +109,9 @@
 	%>
 	
 	</body>
-	</html>
+    </html>
+    
+
+
+</body>
+</html>
