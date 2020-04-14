@@ -44,11 +44,11 @@
     <center>
             <!--Navigation Bar-->
             <div class="topnav">
-                <a href="homepage.html">Home</a>
-                <a href="patients.html">Patients</a>
-                <a href="prescriptions.html">Prescriptions</a>
-                <a href="payment.html">Payment</a>
-                <a href="manuals.html">Manuals</a>
+                <a href="adminhomepage.html">Home</a>
+                <a href="patients.aspx">Patients</a>
+                <a href="adminprescriptions.html">Prescriptions</a>
+                <a href="adminpayment.html">Payment</a>
+                <a href="adminmanuals.html">Manuals</a>
 
               </div>
             
