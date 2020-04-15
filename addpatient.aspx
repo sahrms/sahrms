@@ -2,7 +2,13 @@
 <%@ Import Namespace="System.Data.Odbc"%>
 <%
 
-	Response.Write("<html><head><title>Patients</title></head><body>");
+	Response.Write("<html><head><title>Patients</title><center><h3>Please fill in the form below:</h3></head><body><br>");
+    Response.Write("<form name='form' id='form'>Patient ID Number: &nbsp; <input type='text' name='patientid' id='patientid'><br><br>");
+    Response.Write("First Name &nbsp; <input type='text' name='fname' id='fname'><br><br>")
+
+
+
+    Response.Write("</center></form>");
 
 	OdbcConnection myconn;
 	OdbcCommand mycmd;
