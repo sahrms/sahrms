@@ -55,6 +55,10 @@
               <br>
               <br>
               <h4><center>SAHRMS Patients</center></h4>
+              <br><br>
+              <button class="button" onClick="window.open('addpatient.aspx');">
+                <span class="icon">Add New Patient</span>
+           </button>
 
 
 <%@ Page Language="C#" Debug="true" %>
