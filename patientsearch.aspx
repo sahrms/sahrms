@@ -15,11 +15,8 @@
     Server=tcp:sahrms.database.windows.net,1433;Database=Patients;Uid=sahrmsadmin;Pwd=Admin442;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30");
     mycmd = new OdbcCommand("SELECT * from patienttable where LName like '%" + search +"&'",myconn);
     
-	
-	myconn.Open();
-    myreader = mycmd.ExecuteReader();
-    
-	Response.Write("<center><table border=1 id=patienttable><td width=75px align=center>Patient ID</td>");
+
+    Response.Write("<center><table border=1 id=patienttable><td width=75px align=center>Patient ID</td>");
         Response.Write("<td width=150px align=center>First Name</td>");
         Response.Write("<td width=150px align=center>Last Name</td>");
         Response.Write("<td width=150px align=center>Date of Birth</td>");
@@ -27,9 +24,10 @@
         Response.Write("<td width=150px align=center>Phone Number</td>");
         Response.Write("<td width=150px align=center>Emergency Contact Number</td>");
         Response.Write("<td width=150px align=center>Primary Doctor</td>"); 
-
-
-    
+	
+	myconn.Open();
+    myreader = mycmd.ExecuteReader();
+ 
 	while ((myreader.Read()))
 	{
 	  Response.Write("<tr>");
