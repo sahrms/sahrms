@@ -64,7 +64,7 @@
               </form>
 
               <!--BUTTON FOR ADDING PATIENT-->
-              <button class="button" onClick="window.open('addpatient.aspx');">
+              <button class="button" onClick="window.open('patientform.html');">
                 <span class="icon">Add New Patient</span>
            </button>
 
