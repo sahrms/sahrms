@@ -8,24 +8,27 @@
 	OdbcConnection myconn;
 	OdbcCommand mycmd;
 	OdbcDataReader myreader;
-	
+    
+    var search = Request.Form["txtsearch"]
+
     myconn = new OdbcConnection(@"Driver={ODBC Driver 13 for SQL Server};
     Server=tcp:sahrms.database.windows.net,1433;Database=Patients;Uid=sahrmsadmin;Pwd=Admin442;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30");
-    mycmd = new OdbcCommand(<input type="text">"SELECT * FROM patienttable WHERE '%searchstring%'",myconn);
+    mycmd = new OdbcCommand("SELECT * FROM patienttable WHERE LName like '%" + search +"&'",myconn);
     
 	
 	myconn.Open();
     myreader = mycmd.ExecuteReader();
     
-	
 	Response.Write("<center><table border=1 id=patienttable><td width=75px align=center>Patient ID</td>");
-	Response.Write("<td width=150px align=center>First Name</td>");
-    Response.Write("<td width=150px align=center>Last Name</td>");
-    Response.Write("<td width=150px align=center>Date of Birth</td>");
-    Response.Write("<td width=500px align=center>Home Address</td>");
-    Response.Write("<td width=150px align=center>Phone Number</td>");
-    Response.Write("<td width=150px align=center>Emergency Contact Number</td>");
-    Response.Write("<td width=150px align=center>Primary Doctor</td>");
+        Response.Write("<td width=150px align=center>First Name</td>");
+        Response.Write("<td width=150px align=center>Last Name</td>");
+        Response.Write("<td width=150px align=center>Date of Birth</td>");
+        Response.Write("<td width=500px align=center>Home Address</td>");
+        Response.Write("<td width=150px align=center>Phone Number</td>");
+        Response.Write("<td width=150px align=center>Emergency Contact Number</td>");
+        Response.Write("<td width=150px align=center>Primary Doctor</td>"); 
+
+
     
 	while ((myreader.Read()))
 	{
