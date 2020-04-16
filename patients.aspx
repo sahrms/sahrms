@@ -55,11 +55,20 @@
               <br>
               <br>
               <h4><center>SAHRMS Patients</center></h4>
+
               <br><br>
+              <!--SEARCH BAR- ONLY SEARCHES BY LASTNAME-->
+              <center>Search Patient by Last Name</center>
+              <form name="search" method="post" action="patientsearch.aspx">
+                  <input type="text" name="txtsearch"><input type="submit" value="Search">
+              </form>
+
+              <!--BUTTON FOR ADDING PATIENT-->
               <button class="button" onClick="window.open('addpatient.aspx');">
                 <span class="icon">Add New Patient</span>
            </button>
 
+           
 
 <%@ Page Language="C#" Debug="true" %>
 <%@ Import Namespace="System.Data.Odbc"%>
