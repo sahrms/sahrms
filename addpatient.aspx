@@ -4,7 +4,13 @@
 
 	Response.Write("<html><head><title>Patients</title><center><h3>Please fill in the form below:</h3></head><body><br>");
     Response.Write("<form name='form' id='form'>Patient ID Number: &nbsp; <input type='text' name='patientid' id='patientid'><br><br>");
-    Response.Write("First Name &nbsp; <input type='text' name='fname' id='fname'><br><br>")
+    Response.Write("First Name &nbsp; <input type='text' name='fname' id='fname'><br><br>");
+    Response.Write("Last Name &nbsp; <input type='text' name='lname' id='lname'><br><br>");
+    Response.Write("Date of Birth (12/31/2000) &nbsp; <input type='text' name='dob' id='dob'><br><br>");
+	Response.Write("Home Address (Street, City, State, ZIP) &nbsp; <input type='text' name='address' id='address'><br><br>");
+	Response.Write("Phone Number &nbsp; <input type='text' name='phonenum' id='phonenum'><br><br>");
+	Response.Write("Emergency Contact Number &nbsp; <input type='text' name='emergnum' id='emergnum'><br><br>");
+	Response.Write("Doctor ID Number &nbsp; <input type='text' name='docid' id='docid'><br><br>");
 
 
 
