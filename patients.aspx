@@ -59,7 +59,7 @@
               <br><br>
               <!--SEARCH BAR- ONLY SEARCHES BY LASTNAME-->
               <center>Search Patient by Last Name</center>
-              <form name="search" method="post" action="patientsearch.aspx">
+              <form name="search" method="Post" action="patientsearch.aspx">
                   <input type="text" name="txtsearch"><input type="submit" value="Search">
               </form>
 

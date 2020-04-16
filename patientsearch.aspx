@@ -9,11 +9,11 @@
 	OdbcCommand mycmd;
 	OdbcDataReader myreader;
     
-    var search = Request.Form["txtsearch"]
+    var search = Request.Form["txtsearch"];
 
     myconn = new OdbcConnection(@"Driver={ODBC Driver 13 for SQL Server};
     Server=tcp:sahrms.database.windows.net,1433;Database=Patients;Uid=sahrmsadmin;Pwd=Admin442;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30");
-    mycmd = new OdbcCommand("SELECT * FROM patienttable WHERE LName like '%" + search +"&'",myconn);
+    mycmd = new OdbcCommand("SELECT * from patienttable where LName like '%" + search +"&'",myconn);
     
 	
 	myconn.Open();
