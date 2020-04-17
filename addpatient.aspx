@@ -22,28 +22,11 @@
         Response.Write("<td width=150px align=center>Primary Doctor</td>");
 	
 	myconn.Open();
-    myreader = mycmd.ExecuteReader();
+    //myreader = mycmd.ExecuteReader();
 	
-	while ((myreader.Read()))
-	{
-	  Response.Write("<tr>");
-	  Response.Write("<td align=center>"+ myreader["PatientID"]+"</td>");
-	  Response.Write("<td align=center>"+myreader["FName"] + "</td>");
-	  Response.Write("<td align=center>"+myreader["LName"]+"</td>");
-      Response.Write("<td align=center>"+myreader["DOB"]+"</td>");
-      Response.Write("<td align=center>"+myreader["Home_Address"]+"</td>");
-      Response.Write("<td align=center>"+myreader["Phone_Num"]+"</td>");
-      Response.Write("<td align=center>"+myreader["E_Contact_Num"]+"</td>");
-      Response.Write("<td align=center>"+myreader["UserID"]+"</td>");
-      
-
-	  Response.Write("<br>");
-	}
-
-	Response.Write("</table></center>");
 
 
-	myreader.Close();
+	//myreader.Close();
 	myconn.Close();
 	
 	%>
