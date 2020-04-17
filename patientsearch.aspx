@@ -13,7 +13,7 @@
 
     myconn = new OdbcConnection(@"Driver={ODBC Driver 13 for SQL Server};
     Server=tcp:sahrms.database.windows.net,1433;Database=Patients;Uid=sahrmsadmin;Pwd=Admin442;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30");
-    mycmd = new OdbcCommand("SELECT * from patienttable where LName like '%" + Request.Form["txtsearch"] +"&'",myconn);
+    mycmd = new OdbcCommand("SELECT * from PATIENTS where LName like '%" + Request.Form["txtsearch"] +"&'",myconn);
     
 
     Response.Write("<center><table border=1 id=patienttable><td width=75px align=center>Patient ID</td>");
