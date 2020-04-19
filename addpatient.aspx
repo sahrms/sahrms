@@ -14,11 +14,10 @@
 	
 	
 	myconn.Open();
-    myreader = mycmd.ExecuteReader();
+    mycmd.ExecuteNonQuery();
 	
+    
 
-
-	myreader.Close();
 	myconn.Close();
 	
 	%>
