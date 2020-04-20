@@ -69,7 +69,7 @@
             </button>
 
            <!--BUTTON FOR EDIT PATIENT-->
-           <button class="button" onClick="window.open('editpatient.html');">
+           <button class="button" onClick="window.open('editpatientrecords.html');">
                <span class="icon">Edit Patient</span>
            </button>
            
