@@ -8,7 +8,7 @@
 
 	string data= Request.Form("form");
     
-    Response.Write("<html> Request.Form["patientid"]</html>");
+
 
     <!--myconn = new OdbcConnection(@"Driver={ODBC Driver 13 for SQL Server};
     Server=tcp:sahrms.database.windows.net,1433;Database=Patients;Uid=sahrmsadmin;Pwd=Admin442;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30");
