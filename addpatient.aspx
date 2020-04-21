@@ -2,9 +2,9 @@
 <%@ Import Namespace="System.Data.Odbc"%>
 <%
 
-	OdbcConnection myconn;
+	<!--OdbcConnection myconn;
 	OdbcCommand mycmd;
-	OdbcDataReader myreader;
+	OdbcDataReader myreader;-->
 
 	string patientid = Request.Form["patientid"];
 	string fname = Request.Form["fname"];
@@ -15,6 +15,8 @@
 	string emergcon = Request.Form["emergcon"];
 	string doctor = Request.Form["doctor"];
     
+
+	Response.Write("<html><body>patientid &nbsp; fname</body></html>");
 
     myconn = new OdbcConnection(@"Driver={ODBC Driver 13 for SQL Server};
     Server=tcp:sahrms.database.windows.net,1433;Database=Patients;Uid=sahrmsadmin;Pwd=Admin442;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30");
