@@ -5,18 +5,15 @@
 	<!--OdbcConnection myconn;
 	OdbcCommand mycmd;
 	OdbcDataReader myreader;-->
-	if (IsPost)
-	{
 	
-		string patientid = Request.Form["patientid"];
-		string fname = Request.Form["fname"];
-		string lname = Request.Form["lname"];
-		string dob = Request.Form["dob"];
-		string address = Request.Form["address"];
-		string phone = Request.Form["phone"];
-		string emergcon = Request.Form["emergcon"];
-		string doctor = Request.Form["doctor"];
-	}
+	string patientid = Request.Form["patientid"];
+	string fname = Request.Form["fname"];
+	string lname = Request.Form["lname"];
+	string dob = Request.Form["dob"];
+	string address = Request.Form["address"];
+	string phone = Request.Form["phone"];
+	string emergcon = Request.Form["emergcon"];
+	string doctor = Request.Form["doctor"];
 
 	Response.Write("<html><body>patientid &nbsp; fname</body></html>");
 
