@@ -31,9 +31,6 @@
       background-color: #ddd;
       color: black;
     }
- 
-
-
 
     </style>
 
@@ -46,9 +43,9 @@
             <div class="topnav">
                 <a href="adminhomepage.html">Home</a>
                 <a href="userpatients.aspx">Patients</a>
-                <a href="adminprescriptions.html">Prescriptions</a>
-                <a href="adminpayment.html">Payment</a>
-                <a href="adminmanuals.html">Manuals</a>
+                <a href="prescriptions.html">Prescriptions</a>
+                <a href="payment.html">Payment</a>
+                <a href="manuals.html">Manuals</a>
 
               </div>
             
