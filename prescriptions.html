@@ -1,5 +1,96 @@
 <html>
 
+<script language="Javascript">
+
+    function checkfield()
+    {
+        var errorflag=false;
+        var errormsg="";
+        var confirmmsg="";
+
+        if (document.prescriptionform.txtid.value=="")
+        {
+            errorflag=true;
+            errormsg="Please enter patient ID. <br>";
+        }
+        else
+        {
+            confirmmsg=confirmmsg + "Patient ID: " + document.prescriptionfrom.txtid.value + "<br>";
+        }
+
+        if (document.prescriptionform.txtfullname.value=="")
+        {
+            errorflag=true;
+            errormsg="Please enter patient name. <br>";
+        }
+        else
+        {
+            confirmmsg=confirmmsg + "Patient Full Name: " + document.prescriptionfrom.txtfullname.value + "<br>";
+        }
+
+        if (document.prescriptionform.txtphone.value=="")
+        {
+            errorflag=true;
+            errormsg="Please enter patient phone number. <br>";
+        }
+        else
+        {
+            confirmmsg=confirmmsg + "Patient Phone Number: " + document.prescriptionfrom.txtphone.value + "<br>";
+        }
+
+//Selecting doctor
+        if (document.prescriptionform.seldoctor.value=="Dr. Jason Smith")
+        {
+            confirmmsg= confirmmsg + "Doctor: Dr. Jason Smith <br>";
+        }
+        if (document.prescriptionfrom.seldoctor.value=="Dr. Mary Brown")
+        {
+            confrimmsg=confirmmsg + "Doctor: Dr. Mary Brown <br>";
+        }
+        if (document.prescriptionfrom.seldoctor.value=="Dr. Caroline Redding")
+        {
+            confrimmsg=confirmmsg + "Doctor: Dr. Caroline Redding <br>";;
+        }
+        if (document.prescriptionform.seldoctor.value=="")
+        {
+            errorflag=true;
+            errormsg=errormsg+"Please select a doctor. <br>";
+        }
+
+//Selecting Pharmacy
+        if (document.prescriptionform.selpharmacy.value=="CVS")
+        {
+            confirmmsg=confirmmsg + "This prescription will be sent to CVS Pharmacy on Carol Street in Shippensburg. <br>";
+        }
+        if (doucment.prescriptionform.selpharmacy.value=="Rite Aid")
+        {
+            confirmmsg=confirmmsg + "This prescription will be sent to Rite Aid on Locke Street in Shippensburg. <br>";
+        }
+        if (document.prescriptionform.selpharmacy.value=="ABC")
+        {
+            confirmmsg=confirmmsg + "This prescription will be sent to ABC Pharmacy on Winter Road in Chambersburg. <br>";
+        }
+        if (document.prescriptionform.selpharmacy.value=="Blank")
+        {
+            errorflag=true;
+            errormsg=errormsg+"Please select a pharmacy. <br>";
+        }
+
+        //error msg
+	    if (errorflag==true)
+	    {
+	     document.write(errormsg);
+	    } 
+	    else
+	    {
+	      document.write(confirmmsg);
+    	} 
+
+
+
+    }
+</script>
+
 <head>
     <center><h1>Shippensburg Area Hospital Record Management System</h1></center>
     <br>
@@ -32,32 +123,70 @@
       color: black;
     }
     
-
-
-
-
     </style>
-
 
  </head>
 
 <body>
     <center>
-            <!--Navigation Bar-->
-            <div class="topnav">
-                <a href="homepage.html">Home</a>
-                <a href="userpatients.aspx">Patients</a>
-                <a href="prescriptions.html">Prescriptions</a>
-                <a href="payment.html">Payment</a>
-                <a href="manuals.html">Manuals</a>
+          <!--Navigation Bar-->
+          <div class="topnav">
+            <a href="adminhomepage.html">Home</a>
+            <a href="userpatients.aspx">Patients</a>
+            <a href="prescriptions.html">Prescriptions</a>
+            <a href="payment.html">Payment</a>
+            <a href="manuals.html">Manuals</a>
 
-              </div>
-
+          </div>
         <h3>Prescriptions</h3>      
 
     </center>
 
+    <div class="form" >
 
+        <form name="prescriptionform" method="Post" >
+            <center><table border = 0 >
+                <tr>
+                    <td> Patient ID: <input type="Text" name="txtid" size=10 maxlength=5></td>
+                </tr>
+
+                <tr>  
+                    <td> Patient Name: <input type="Text" name="txtfullname" size=35 maxlength=35></td>
+                </tr>      
+                
+                <tr>
+                    <td> Phone Number: <input type="Text" name="txtphone" size=25 maxlength=25></td>
+                </tr>
+                
+                <tr>
+                    <td>Doctor: <select name="seldoctor">
+                        <option value="Blank"> </option>
+                        <option value="Dr. Jason Smith">Dr. Jason Smith</option>
+                        <option value="Dr. Mary Brown">Dr. Mary Brown</option>
+                        <option value="Dr. Caroline Redding">Dr. Caroline Redding</option>
+                    </select></td>
+
+                </tr>
+                <tr>
+                    <td> Pharmacy: <select name="selpharmacy">
+                        <option value="Blank"> </option>
+                        <option value="CVS">CVS Pharmacy Carol Street Shippensburg</option>
+                        <option value="Rite Aid">Rite Aid Locke Street Shippensburg</option>
+                        <option value="ABC">ABC Pharmacy Winter Road Chambersburg</option>
+                    </select></td>   
+                </tr>
+
+                <tr>
+                    <td>Doctor Notes: <textarea name="textarea" cols=50 rows=8></textarea> </td>
+                </tr>
+
+            </table>
+
+            <input type="button" value="Send Prescription" onclick="checkfield()">
+            <input type="reset" value="Reset">
+
+
+        </form>
 
 
 
@@ -65,4 +194,3 @@
 
 
 </body>
-
