@@ -23,7 +23,7 @@
 	
 	
 	myconn.Open();
-    mycmd.ExecuteNonQuery();
+    mycmd.ExecuteReader();
 	
     
 
